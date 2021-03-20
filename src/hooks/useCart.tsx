@@ -99,7 +99,6 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
       const stockResponse = await api.get<Stock>(`stock/${productId}`);
 
       if (amount <= stockResponse.data.amount) {
-        console.log(stockResponse.data.amount < amount);
         const newCart = cart.map((product) =>
           product.id === productId ? { ...product, amount } : { ...product }
         );
