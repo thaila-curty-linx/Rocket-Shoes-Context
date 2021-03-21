@@ -50,7 +50,7 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
         setCart([...cart, product]);
       } else {
         if (amount < selectedProduct.amount + 1) {
-          toast.error(`Quantidade solicitada fora do estoque`);
+          toast.error(`Quantidade solicitada fora de estoque`);
           return;
         }
         const newCart = cart.map((product) =>
